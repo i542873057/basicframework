@@ -7,13 +7,11 @@
     <div class="right-menu">
       <error-log class="errLog-container right-menu-item"/>
 
-      <el-tooltip :content="$t('navbar.screenfull')" effect="dark" placement="bottom">
+      <el-tooltip content="全屏" effect="dark" placement="bottom">
         <screenfull class="screenfull right-menu-item"/>
       </el-tooltip>
 
-      <lang-select class="international right-menu-item"/>
-
-      <el-tooltip :content="$t('navbar.theme')" effect="dark" placement="bottom">
+      <el-tooltip content="主题" effect="dark" placement="bottom">
         <theme-picker class="theme-switch right-menu-item"/>
       </el-tooltip>
 
@@ -25,16 +23,16 @@
         <el-dropdown-menu slot="dropdown">
           <router-link to="/">
             <el-dropdown-item>
-              {{ $t('navbar.dashboard') }}
+              首页
             </el-dropdown-item>
           </router-link>
           <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">
             <el-dropdown-item>
-              {{ $t('navbar.github') }}
+              github
             </el-dropdown-item>
           </a>
           <el-dropdown-item divided>
-            <span style="display:block;" @click="logout">{{ $t('navbar.logOut') }}</span>
+            <span style="display:block;" @click="logout">退出系统</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -48,7 +46,6 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
-import LangSelect from '@/components/LangSelect'
 import ThemePicker from '@/components/ThemePicker'
 
 export default {
@@ -57,7 +54,6 @@ export default {
     Hamburger,
     ErrorLog,
     Screenfull,
-    LangSelect,
     ThemePicker
   },
   computed: {
