@@ -6,6 +6,9 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/views/layout/Layout'
 
+/* Router Modules */
+import zeroRouter from './modules/zero'
+
 /** note: submenu only apppear when children.length>=1
  *  detail see  https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
  **/
@@ -32,6 +35,21 @@ export const constantRouterMap = [
     hidden: true
   },
   {
+    path: '/authredirect',
+    component: () => import('@/views/login/authredirect'),
+    hidden: true
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/errorPage/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/errorPage/401'),
+    hidden: true
+  },
+  {
     path: '',
     component: Layout,
     redirect: 'dashboard',
@@ -41,32 +59,6 @@ export const constantRouterMap = [
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
-      }
-    ]
-  },
-  {
-    path: '/documentation',
-    component: Layout,
-    redirect: '/documentation/index',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/login/index'),
-        name: 'Documentation',
-        meta: { title: 'documentation', icon: 'documentation', noCache: true }
-      }
-    ]
-  },
-  {
-    path: '/guide',
-    component: Layout,
-    redirect: '/guide/index',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/login/index'),
-        name: 'Guide',
-        meta: { title: 'guide', icon: 'guide', noCache: true }
       }
     ]
   }
@@ -79,16 +71,5 @@ export default new Router({
 })
 
 export const asyncRouterMap = [
-  {
-    path: '/icon',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/login/index'),
-        name: 'Icons',
-        meta: { title: 'icons', icon: 'icon', noCache: true }
-      }
-    ]
-  }
+  zeroRouter
 ]
