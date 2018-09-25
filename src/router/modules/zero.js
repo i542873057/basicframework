@@ -38,7 +38,7 @@ const componentsRouter = {
     },
     {
       path: 'auditLog',
-      component: () => import('@/views/login/index'),
+      component: () => import('@/views/zero/auditLog/index'),
       name: 'auditLog',
       meta: { title: 'auditLog' }
     },

@@ -59,8 +59,7 @@ export default {
         limit: 20,
         sort: '+Id',
         UserNameOrEmailAddress: undefined
-      },
-      sortOptions: [{ label: 'ID Ascending', key: '+Id' }, { label: 'ID Descending', key: '-Id' }]
+      }
     }
   },
   created() {
