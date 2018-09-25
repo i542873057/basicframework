@@ -50,7 +50,7 @@ const componentsRouter = {
     },
     {
       path: 'loginLog',
-      component: () => import('@/views/login/index'),
+      component: () => import('@/views/zero/loginLog/index'),
       name: 'loginLog',
       meta: { title: 'loginLog' }
     },
