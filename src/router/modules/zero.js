@@ -26,7 +26,7 @@ const componentsRouter = {
     },
     {
       path: 'deptManager',
-      component: () => import('@/views/login/index'),
+      component: () => import('@/views/zero/organizationUnit/index'),
       name: 'deptManager',
       meta: { title: 'deptManager' }
     },
